@@ -200,6 +200,7 @@ def filterpass(post):
 def get_url_string(post):
   try:
     after_split = post.body.split("wikipedia.org/wiki/")[1]
+	after_split = after_split.split('?')[0]
     for e in ['\n', ' ']:
       after_split = after_split.split(e)[0]
     if after_split.endswith(')') and not re.search(r'\(',after_split):
